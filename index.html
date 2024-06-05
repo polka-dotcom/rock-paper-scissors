@@ -14,8 +14,23 @@
             return choices[indx];
         }
 
-        console.log(getComputerChoice());
+        let c = getComputerChoice(); 
 
+        function getHumanChoice() {
+             let h = prompt("Choose: Rock, Paper or Scissors: ").toLowerCase(); 
+
+             const choices = ["rock", "paper", "scissors"]; 
+             while (!choices.includes(h)) {
+                h = prompt("Invalid choice. Choose: Rock, Paper or Scissors: ").toLowerCase();
+             }
+             return h;
+
+        }
+
+        let h = getHumanChoice();
+
+        console.log(h);
+        console.log(c);
     </script>
 </body>
 </html>
