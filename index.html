@@ -8,13 +8,14 @@
 <body>
     <script>
 
+        let humanScore = 0;
+        let computerScore = 0;
+
         function getComputerChoice() {
             const choices = ["rock", "paper", "scissors"]; 
             const indx = Math.floor(Math.random()*3);
             return choices[indx];
         }
-
-        let c = getComputerChoice(); 
 
         function getHumanChoice() {
              let h = prompt("Choose: Rock, Paper or Scissors: ").toLowerCase(); 
@@ -24,13 +25,52 @@
                 h = prompt("Invalid choice. Choose: Rock, Paper or Scissors: ").toLowerCase();
              }
              return h;
-
         }
 
-        let h = getHumanChoice();
+        function playRound(h, c) {
+            if (h == "rock") {
+                if (c == "rock") {
+                    return "That's a tie";
+                } else if (c == "paper") {
+                    computerScore++; 
+                    return "You lose! Paper beats Rock";
+                } else {
+                    humanScore++; 
+                    return "You win! Rock beats Scissors";
+                }
+            }
 
-        console.log(h);
-        console.log(c);
+            if (h == "paper") {
+                if (c == "paper") {
+                    return "That's a tie";
+                } else if (c == "scissors") {
+                    computerScore++; 
+                    return "You lose! Scissors beats Paper";
+                } else {
+                    humanScore++; 
+                    return "You win! Paper beats Rock";
+                }
+            }
+
+            if (h == "scissors") {
+                if (c == "scissors") {
+                    return "That's a tie";
+                } else if (c == "rock") {
+                    computerScore++; 
+                    return "You lose! Rock beats Scissors";
+                } else {
+                    humanScore++; 
+                    return "You win! Scissors beats Paper";
+                }
+            }
+        }
+
+        const computerSelection = getComputerChoice(); 
+        const humanSelection = getHumanChoice();
+        
+        const result = playRound(humanSelection, computerSelection);
+        console.log(result);
+
     </script>
 </body>
 </html>
