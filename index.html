@@ -64,12 +64,31 @@
                 }
             }
         }
-
-        const computerSelection = getComputerChoice(); 
-        const humanSelection = getHumanChoice();
         
-        const result = playRound(humanSelection, computerSelection);
-        console.log(result);
+
+        function playGame() {
+            for (let i = 0; i < 5; i++) {
+                const computerSelection = getComputerChoice(); 
+                const humanSelection = getHumanChoice();
+                
+                const result = playRound(humanSelection, computerSelection);
+                console.log(result);
+
+                console.log("Your points: " + humanScore);
+                console.log("Computer points " + computerScore); 
+            }
+
+            if (humanScore > computerScore) {
+                console.log("You WIN! :)"); 
+            } else if (humanScore < computerScore) {
+                console.log("You've lost :(")
+            } else {
+                console.log("It's a tie :/")
+            }
+        }
+
+        const game = playGame(); 
+        console.log(game);
 
     </script>
 </body>
