@@ -1,0 +1,41 @@
+body {
+    display: flex; 
+    background-color: black;
+    align-items: center;
+    flex-direction: column;
+}
+
+#result {
+    /* display: flex; */
+    border: 4px solid white; 
+    font-size: 16px;
+    color: blue;  
+    width: 400px; 
+    height: 30px; 
+    margin-top: 30px;
+    text-align: center;
+    /* justify-content: center; */
+}
+
+#score {
+    color: white; 
+    margin-top: 30px;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none; 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 4px 2px; 
+    border-radius: 12px; 
+    transition: background-color 0.3s; 
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
